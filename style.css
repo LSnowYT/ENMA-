@@ -95,8 +95,9 @@ header nav {
     height: auto;
     /* Animação de rotação contínua */
     animation: rotateBread 25s linear infinite;
-    /* Efeito de brilho */
-    filter: drop-shadow(0 0 16px rgba(212, 175, 55, 0.3));
+    /* Remove fundo branco corretamente sem apagar o pão */
+    background-color: transparent;
+    filter: drop-shadow(0 0 16px rgba(212, 175, 55, 0.3)) brightness(1.05) contrast(1.1);
     transition: var(--transicao-padrao);
 }
 

@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ENMA | O Pão Perfeito</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="favicon.png" type="image/png">
 </head>
 <body>
 
@@ -18,12 +19,8 @@
     <!-- Seção Hero Principal -->
     <main class="hero">
         <div class="bread-container">
-            <!-- Usaremos um SVG para o pão, não precisa de imagem externa -->
-            <svg class="gold-bread" viewBox="0 0 200 120" xmlns="http://www.w3.org/2000/svg">
-                <ellipse cx="100" cy="60" rx="95" ry="55" fill="#d4af37"/>
-                <ellipse cx="100" cy="55" rx="85" ry="45" fill="#e6c963"/>
-                <ellipse cx="100" cy="52" rx="70" ry="35" fill="#dbb748"/>
-            </svg>
+            <!-- Usaremos um SVG para o pão, não precisa de imagem externa --> 
+            <img src="https://png.pngtree.com/png-vector/20250726/ourlarge/pngtree-cartoon-loaf-of-bread-isolated-on-transparent-background-vector-png-image_16878956.webp" class="gold-bread" alt="Pão dourado ENMA">
             <div class="particles" id="particlesContainer"></div>
         </div>
 
@@ -65,6 +62,16 @@
                         <label class="radio-option">
                             <input type="radio" name="pao" value="dourado">
                             <span>Bem dourado</span>
+                        </label>
+
+                        <label class="radio-option">
+                            <input type="radio" name="pao" value="Quase queimado">
+                            <span>Quase queimado</span>
+                        </label>
+                        
+                        <label class="radio-option">
+                            <input type="radio" name="pao" value="Queimado">
+                            <span>Queimado</span>
                         </label>
                         
                         <label class="radio-option">
