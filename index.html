@@ -1,102 +1,89 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <link rel="stylesheet" href="style.css">
     <meta charset="UTF-8">
-    <title>Tabelas com Colspan e Rowspan</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ENMA | O Pão Perfeito</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div>
 
-<h2>Based</h2>
+    <!-- Cabeçalho Fixo -->
+    <header id="header">
+        <nav>
+            <button id="menuFormulario">Formulário</button>
+        </nav>
+    </header>
 
-<table border="2">
-    
-    <tr>
-        <th>Tier</th>
-        <th>Mains</th>
-        <th>Position</th>
-    </tr>
-    <tbody>
-    <tr>
-        <td rowspan="2">Owner</td>
-        <td>Ainz</td>
-        <td>1</td>
-    </tr>
-    <tr>
-        <td>Albeldo</td>
-        <td>2</td>
-    </tr>
-    <tr>
-        <td rowspan="2">Vice Leader</td>
-        <td>Demirgus</td>
-        <td>3</td>
-    </tr>
-    </tbody>
-    <tfoot>
-    <tr>
-        <td>abaixo da Albedo ne</td>
-        <td>Shalltear Bloodfallen</td>
-        <td>4</td>
-    </tr>
-    </tfoot>
-</table>
+    <!-- Seção Hero Principal -->
+    <main class="hero">
+        <div class="bread-container">
+            <!-- Usaremos um SVG para o pão, não precisa de imagem externa -->
+            <svg class="gold-bread" viewBox="0 0 200 120" xmlns="http://www.w3.org/2000/svg">
+                <ellipse cx="100" cy="60" rx="95" ry="55" fill="#d4af37"/>
+                <ellipse cx="100" cy="55" rx="85" ry="45" fill="#e6c963"/>
+                <ellipse cx="100" cy="52" rx="70" ry="35" fill="#dbb748"/>
+            </svg>
+            <div class="particles" id="particlesContainer"></div>
+        </div>
 
-</div>
+        <h1>ENMA</h1>
+        <p>O pão como ele deve ser.</p>
+    </main>
 
-<h2>Maids Caractes overlord</h2>
-<div>
-<table border="2">
-    
-    <thead>
-    <tr>
-        <th colspan="3">Nazarick</th>
-    </tr>
-    </thead>
-    <tr>
-        <th>Pleiades</th>
-        <th>Quantidade</th>
-        <th>grau</th>
-    </tr>
-    <tr>
-        <td>Yuri Alpha</td>
-        <td>1</td>
-        <td>10°</td>
-    </tr>
-    <tr>
-        <td>Lupusregina Beta</td>
-        <td>1</td>
-        <td>10°</td>
-    </tr>
-    <tr>
-        <td>Narberal Gamma</td>
-        <td>1</td>
-        <td>10°</td>
-    </tr>
-    <tr>
-        <td>CZ2128 Delta</td>
-        <td>1</td>
-        <td>10°</td>
-    </tr>
-    <tr>
-        <td>Solution Epsilon</td>
-        <td>1</td>
-        <td>10°</td>
-    </tr>
-     </tbody>
-    <tfoot>
-    <tr>
-        <td>Entoma Vasilissa Zeta</td>
-        <td>1</td>
-        <td>10°</td>
-    </tr>
-    </tfoot>
-   
-</table>
-</div>
+    <!-- Seção Formulário -->
+    <section id="formulario">
+        <div class="form-container">
+            <h2>Quer receber o melhor pão?</h2>
+            <p>Cadastre-se e seja o primeiro a saber quando lançarmos.</p>
 
-<div class="eleeoctus">
-    <h1>Coctus</h1>
-</div>
+            <form id="cadastroForm">
+                <div class="form-group">
+                    <label for="nome">Seu nome</label>
+                    <input type="text" id="nome" placeholder="Digite seu nome completo" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Seu e-mail</label>
+                    <input type="email" id="email" placeholder="seu@email.com" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Como você gosta do seu pão?</label>
+                    
+                    <div class="radio-group">
+                        <label class="radio-option">
+                            <input type="radio" name="pao" value="macio" required>
+                            <span>Macio</span>
+                        </label>
+                        
+                        <label class="radio-option">
+                            <input type="radio" name="pao" value="crocante">
+                            <span>Crocante</span>
+                        </label>
+                        
+                        <label class="radio-option">
+                            <input type="radio" name="pao" value="dourado">
+                            <span>Bem dourado</span>
+                        </label>
+                        
+                        <label class="radio-option">
+                            <input type="radio" name="pao" value="tradicional">
+                            <span>Tradicional</span>
+                        </label>
+                        
+                        <label class="radio-option">
+                            <input type="radio" name="pao" value="sementes">
+                            <span>Com sementes</span>
+                        </label>
+                    </div>
+                </div>
+
+                <button type="submit" class="submit-btn">Cadastrar</button>
+            </form>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
 </body>
 </html>

@@ -1,40 +1,294 @@
+/* ================================================
+   VARIÁVEIS CSS - CONFIGURAÇÕES GERAIS
+   ================================================ */
+:root {
+    --bg-principal: #0f0f0f;
+    --cor-dourado: #d4af37;
+    --cor-dourado-claro: #e6c963;
+    --cor-texto: #f5f5f5;
+    --cor-texto-secundario: #aaaaaa;
+    --transicao-padrao: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ================================================
+   RESET E CONFIGURAÇÕES BASE
+   ================================================ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
 body {
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: #0f0f1a;
-    color: #ffffff;
-    padding: 40px;
+    background-color: var(--bg-principal);
+    color: var(--cor-texto);
+    overflow-x: hidden;
 }
 
-h2 {
-    color: #d4af37;
-    margin-bottom: 15px;
+/* ================================================
+   HEADER FIXO COM ANIMAÇÃO DE SCROLL
+   ================================================ */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 24px 0;
+    z-index: 100;
+    background-color: rgba(15, 15, 15, 0.85);
+    backdrop-filter: blur(8px);
+    transition: var(--transicao-padrao);
 }
 
-table {
-
-    width: 60%;
-    margin-bottom: 40px;
-    background-color: #1c1c2b;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+header.oculto {
+    transform: translateY(-100%);
+    opacity: 0;
 }
 
-th {
-    background-color: #681e99;
-    color: white;
-    padding: 12px;
-    text-align: left;
+header nav {
+    display: flex;
+    justify-content: center;
+    width: 100%;
 }
 
-td {
-    padding: 10px;
+#menuFormulario {
+    background: none;
+    border: none;
+    color: var(--cor-texto);
+    font-size: 16px;
+    cursor: pointer;
+    padding: 8px 16px;
+    transition: var(--transicao-padrao);
+    border-radius: 4px;
 }
 
-.minha-div {
-  position: absolute;
-  right: 0;
+#menuFormulario:hover {
+    color: var(--cor-dourado);
+    background-color: rgba(212, 175, 55, 0.1);
 }
 
-.eleeoctus {
+/* ================================================
+   SEÇÃO HERO PRINCIPAL
+   ================================================ */
+.hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.bread-container {
+    position: relative;
+    margin-bottom: 32px;
+    cursor: pointer;
+}
+
+.gold-bread {
+    width: 220px;
+    height: auto;
+    /* Animação de rotação contínua */
+    animation: rotateBread 25s linear infinite;
+    /* Efeito de brilho */
+    filter: drop-shadow(0 0 16px rgba(212, 175, 55, 0.3));
+    transition: var(--transicao-padrao);
+}
+
+.gold-bread:hover {
+    filter: drop-shadow(0 0 24px rgba(212, 175, 55, 0.5));
+    transform: scale(1.05);
+}
+
+.particles {
     position: absolute;
-    right: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.hero h1 {
+    font-size: 64px;
+    font-weight: 300;
+    letter-spacing: 12px;
+    color: var(--cor-dourado);
+    margin-bottom: 8px;
+}
+
+.hero p {
+    font-size: 18px;
+    color: var(--cor-texto-secundario);
+    font-weight: 300;
+    letter-spacing: 2px;
+}
+
+/* ================================================
+   SEÇÃO DO FORMULÁRIO
+   ================================================ */
+#formulario {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 80px 24px;
+}
+
+.form-container {
+    width: 100%;
+    max-width: 520px;
+}
+
+.form-container h2 {
+    font-size: 32px;
+    font-weight: 400;
+    margin-bottom: 12px;
+    text-align: center;
+    color: var(--cor-texto);
+}
+
+.form-container p {
+    color: var(--cor-texto-secundario);
+    text-align: center;
+    margin-bottom: 48px;
+}
+
+.form-group {
+    margin-bottom: 32px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 12px;
+    font-size: 15px;
+    color: var(--cor-texto-secundario);
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"] {
+    width: 100%;
+    padding: 16px 20px;
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    color: var(--cor-texto);
+    font-size: 16px;
+    transition: var(--transicao-padrao);
+    outline: none;
+}
+
+.form-group input:focus {
+    border-color: var(--cor-dourado);
+    background-color: rgba(212, 175, 55, 0.05);
+}
+
+.radio-group {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 12px;
+    margin-top: 16px;
+}
+
+.radio-option {
+    display: flex;
+    align-items: center;
+    padding: 12px 16px;
+    background-color: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: var(--transicao-padrao);
+}
+
+.radio-option:hover {
+    border-color: var(--cor-dourado);
+}
+
+.radio-option input {
+    margin-right: 10px;
+    accent-color: var(--cor-dourado);
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 18px;
+    background-color: var(--cor-dourado);
+    color: var(--bg-principal);
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--transicao-padrao);
+}
+
+.submit-btn:hover {
+    background-color: var(--cor-dourado-claro);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(212, 175, 55, 0.25);
+}
+
+/* ================================================
+   ANIMAÇÕES CSS
+   ================================================ */
+@keyframes rotateBread {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes particleExplosion {
+    0% {
+        opacity: 1;
+        transform: translate(0, 0) scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: translate(var(--mov-x), var(--mov-y)) scale(0);
+    }
+}
+
+.particle {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background-color: var(--cor-dourado);
+    border-radius: 50%;
+    pointer-events: none;
+    animation: particleExplosion 1.2s ease-out forwards;
+}
+
+/* ================================================
+   RESPONSIVIDADE MOBILE
+   ================================================ */
+@media (max-width: 768px) {
+    .gold-bread {
+        width: 160px;
+    }
+
+    .hero h1 {
+        font-size: 42px;
+        letter-spacing: 8px;
+    }
+
+    .hero p {
+        font-size: 15px;
+    }
+
+    .form-container h2 {
+        font-size: 24px;
+    }
+
+    .radio-group {
+        grid-template-columns: 1fr 1fr;
+    }
 }
