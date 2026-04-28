@@ -92,7 +92,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
     formulario.addEventListener('submit', (e) => {
         e.preventDefault();
-        alert('✅ Cadastro realizado com sucesso! Você receberá novidades em breve.');
+        alert(' Cadastro realizado com sucesso! Você receberá novidades em breve.');
         formulario.reset();
     });
 
